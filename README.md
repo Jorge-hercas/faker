@@ -1,3 +1,5 @@
+![faker](https://github.com/Jorge-hercas/faker/assets/70007745/15e315b0-14c0-4f33-8fc3-b8f4af2d163c)
+
 # faker
 This package aims to connect to the faker API and be able to easily build tables with random data, mainly for the purpose of testing and practicing.
 
