@@ -4,7 +4,7 @@ This package aims to connect to the faker API and be able to easily build tables
 ## Installation
 
 ```
-devtools::install("Jorge-hercas/faker")
+devtools::install_github("Jorge-hercas/faker")
 ```
 
 
