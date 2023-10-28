@@ -192,6 +192,41 @@ products_data <- function(obs = 10, prices_interval = c(0,100), tax = 30, catego
 }
 
 
+#' Images data request
+#'
+#' @param obs Number of rows returned
+#' @param image_type Images category. Can be one of the following: any, animals, architecture, nature, people, tech, kittens, pokemon
+#' @param width Width img in px. 640
+#' @param height Height img in px. 480
+#' @param only_url_img Boolean value. If TRUE only return url images vector
+#'
+#' @return
+#' @export
+#'
+#' @examples
+images_data <- function(obs = 10, image_type = "any", width = 640, height = 480, only_url_img = FALSE){
+
+  if (only_url_img == TRUE){
+    tryCatch({
+      path <- paste0("https://fakerapi.it/api/v1/products?_quantity=",obs, "&_type=",image_type,
+                     "&_width=",width, "&_height=", height)
+    }, error = function(e){
+      stop("Argument `obs` is required and `characters`")
+    })
+    return(jsonlite::fromJSON(path)$data$image)
+  }else{
+    tryCatch({
+      path <- paste0("https://fakerapi.it/api/v1/products?_quantity=",obs, "&_type=",image_type,
+                     "&_width=",width, "&_height=", height)
+    }, error = function(e){
+      stop("Argument `obs` is required and `characters`")
+    })
+    return(jsonlite::fromJSON(path)$data)
+  }
+
+}
+
+
 #' Custom table request
 #'
 #' @param obs Number of rows returned
